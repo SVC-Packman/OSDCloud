@@ -25,10 +25,9 @@ powershell iex(irm go.osdcloud.com/enterprise)
 .NOTES
     Version 22.9.13.1
 .LINK
-    https://raw.githubusercontent.com/OSDeploy/OSD/master/cloud/go.osdcloud.com/enterprise.ps1
-    https://raw.githubusercontent.com/SVC-Packman/OSDCloud/enterprise.ps1
+    https://raw.githubusercontent.com/SVC-Packman/OSDCloud/main/Enterprise.ps1
 .EXAMPLE
-    powershell iex (irm go.osdcloud.com/enterprise)
+    powershell iex (irm https://raw.githubusercontent.com/SVC-Packman/OSDCloud/main/Enterprise.ps1)
 #>
 [CmdletBinding()]
 param()
@@ -73,7 +72,8 @@ if ($WindowsPhase -eq 'WinPE') {
     $null = Stop-Transcript -ErrorAction Ignore
 
     #Start OSDCloud and pass all the parameters except the Language to allow for prompting
-    Start-OSDCloud -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Enterprise -OSActivation Volume -SkipAutopilot -SkipODT -Restart
+    #Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 23H2 -OSEdition Enterprise -OSActivation Volume -SkipAutopilot -SkipODT -Restart
+    Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 23H2 -OSEdition Enterprise -OSActivation Volume -SkipODT -Restart
 }
 #endregion
 #=================================================
