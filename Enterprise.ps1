@@ -1,4 +1,4 @@
-﻿<#PSScriptInfo
+<#PSScriptInfo
 .VERSION 22.9.13.1
 .GUID 57f30acf-8336-4519-9971-1d71d261f197
 .AUTHOR David Segura @SeguraOSD
@@ -25,9 +25,9 @@ powershell iex(irm go.osdcloud.com/enterprise)
 .NOTES
     Version 22.9.13.1
 .LINK
-    https://raw.githubusercontent.com/SVC-Packman/OSDCloud/main/Enterprise.ps1
+    https://raw.githubusercontent.com/OSDeploy/OSD/master/cloud/tasksequences/enterprise.ps1
 .EXAMPLE
-    powershell iex (irm https://raw.githubusercontent.com/SVC-Packman/OSDCloud/main/Enterprise.ps1)
+    powershell iex (irm go.osdcloud.com/enterprise)
 #>
 [CmdletBinding()]
 param()
@@ -73,7 +73,6 @@ if ($WindowsPhase -eq 'WinPE') {
 
     #Start OSDCloud and pass all the parameters except the Language to allow for prompting
     Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 23H2 -OSEdition Enterprise -OSActivation Volume -SkipAutopilot -SkipODT -Restart
-    #Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 23H2 -OSEdition Enterprise -OSActivation Volume -SkipODT -Restart
 }
 #endregion
 #=================================================
