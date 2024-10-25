@@ -72,7 +72,8 @@ if ($WindowsPhase -eq 'WinPE') {
     $null = Stop-Transcript -ErrorAction Ignore
 
     #Start OSDCloud and pass all the parameters except the Language to allow for prompting
-    Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 23H2 -OSEdition Enterprise -OSActivation Volume -SkipAutopilot -SkipODT -Restart -OSLanguage en-us -ZTI
+    #Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 23H2 -OSEdition Enterprise -OSActivation Volume -SkipAutopilot -SkipODT -Restart -OSLanguage en-us -ZTI
+    Start-OSDCloud -OSVersion 'Windows 11' -OSBuild 23H2 -OSEdition Enterprise -OSActivation Volume -SkipODT -Restart -OSLanguage en-us -ZTI
 }
 #endregion
 #=================================================
